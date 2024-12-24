@@ -1,0 +1,22 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="VoiceMessagePlayer.MainPage">
+
+    <StackLayout>
+        <ListView x:Name="MessagesListView"
+                  ItemSelected="OnMessageSelected"
+                  SeparatorVisibility="Default">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="1">
+                            <Label Text="{Binding DisplayName}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="10"/>
+                            <Button Text="Play" BackgroundColor="Green" Clicked="OnPlayButtonClicked" VerticalOptions="End" Margin="2"/>
+                            <Button Text="Stop" BackgroundColor="Red"  Clicked="OnStopButtonClicked" VerticalOptions="End" Margin="2"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
